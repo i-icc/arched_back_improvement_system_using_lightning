@@ -19,10 +19,10 @@ int n = 1;
 int p = 0;
 
 // the setup routine runs once when M5Stack starts up
-void setup(){
+void setup() {
   // Initialize the M5Stack object
   M5.begin();
-  
+
   M5.IMU.Init();
 
   M5.Lcd.fillScreen(WHITE);
@@ -32,11 +32,11 @@ void setup(){
 
 // the loop routine runs over and over again forever
 void loop() {
-    // put your main code here, to run repeatedly:
-  M5.IMU.getGyroData(&gyroX,&gyroY,&gyroZ);
-  M5.IMU.getAccelData(&accX,&accY,&accZ);
-  M5.IMU.getAhrsData(&pitch,&roll,&yaw);
-  
+  // put your main code here, to run repeatedly:
+  M5.IMU.getGyroData(&gyroX, &gyroY, &gyroZ);
+  M5.IMU.getAccelData(&accX, &accY, &accZ);
+  M5.IMU.getAhrsData(&pitch, &roll, &yaw);
+
   M5.Lcd.setCursor(0, 20);
   M5.Lcd.printf("%6.2f  %6.2f  %6.2f      ", gyroX, gyroY, gyroZ);
   M5.Lcd.setCursor(220, 42);
@@ -48,12 +48,12 @@ void loop() {
   M5.Lcd.setCursor(0, 110);
   M5.Lcd.printf(" %5.2f   %5.2f   %5.2f   ", pitch, roll, yaw);
   M5.Lcd.setCursor(220, 132);
-  if (roll < 60){
+  if (roll < 60) {
     // 姿勢が悪いとバイブレーションで通知
-    if (n != 1){
-      p =1;
+    if (n != 1) {
+      p = 1;
     }
-    else{
+    else {
       p = 0;
     }
     n = 1;
@@ -66,7 +66,7 @@ void loop() {
   }
   M5.Lcd.print(" degree");
   M5.Lcd.setCursor(0, 177);
-  M5.Lcd.printf("now : %d , p : %d", n,p);
+  M5.Lcd.printf("now : %d , p : %d", n, p);
 
   delay(1);
 }
