@@ -1,7 +1,19 @@
 {
 	"folders": [
 		{
-			"path": "../.."
+			"path": "../../../../../../tdu/kadai-tdu/003_3年後期/0502_"
+		},
+		{
+			"name": "saishu",
+			"path": "../../../../../../tdu/kadai-tdu/003_3年後期/0502_/kadai/saishu"
+		},
+		{
+			"name": "obs_ kyphosis",
+			"path": "../../../../../../tdu/kadai-tdu/003_3年後期/0502_/kadai/obs_ kyphosis"
+		},
+		{
+			"name": "abi_project",
+			"path": ".."
 		}
 	],
 	"settings": {}
